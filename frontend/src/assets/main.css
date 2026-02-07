@@ -1,0 +1,47 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700;800&display=swap');
+
+/* Custom styles for mobile */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  font-family: 'Kanit', 'Sarabun', sans-serif;
+}
+
+html {
+  font-size: 16px; /* Base size for desktop */
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
+}
+
+/* เพิ่ม font size สำหรับมือถือ */
+@media screen and (max-width: 640px) {
+  html {
+    font-size: 16px; /* ป้องกัน iOS zoom */
+    overflow: auto;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px; /* ขนาดขั้นต่ำ */
+  min-height: 100dvh;
+  overflow: auto;
+}
+
+/* ป้องกัน iOS zoom ตอนกด input */
+input,
+select,
+textarea,
+button {
+  font-size: 16px !important; /* Force 16px to prevent zoom */
+  min-height: 48px; /* iOS touch target */
+}
+
+/* Fix viewport height สำหรับมือถือ */
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
+}
